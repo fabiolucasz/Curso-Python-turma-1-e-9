@@ -96,3 +96,119 @@ Insira três alunos diferentes na tabela alunos.
 
 Exercício 3:
 Execute seu script várias vezes. O que acontece? Como evitar inserir os mesmos dados repetidamente?
+
+
+Desafio Final
+Crie um programa que:
+
+- Crie um banco chamado cadastro.db
+
+- Crie uma tabela contatos com os campos: id, nome, email e telefone
+
+- Insira um contato
+
+- Feche a conexão corretamente
+
+
+## Resoluções
+
+Exercício 1:
+
+```python
+import sqlite3
+
+con = sqlite3.connect("escola.db")
+cur = con.cursor()
+
+cur.execute("""
+CREATE TABLE IF NOT EXISTS alunos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT,
+    turma TEXT,
+    idade INTEGER
+)
+""")
+
+con.commit()
+con.close()
+
+```
+
+Exercício 2:
+
+```python
+import sqlite3
+
+con = sqlite3.connect("escola.db")
+cur = con.cursor()
+
+alunos = [
+    ("Ana", "5A", 10),
+    ("Bruno", "5B", 11),
+    ("Clara", "5A", 10)
+]
+
+for aluno in alunos:
+    cur.execute("INSERT INTO alunos (nome, turma, idade) VALUES (?, ?, ?)", aluno)
+
+con.commit()
+con.close()
+
+```
+
+Exercício 3:
+
+Observação:
+Se você executar o código acima várias vezes, ele insere os mesmos alunos novamente. Para evitar isso, você pode:
+
+- Verificar antes se o aluno já existe.
+
+- Executar apenas uma vez ou apagar a tabela antes de rodar novamente (com DELETE FROM alunos).
+
+```python
+import sqlite3
+
+con = sqlite3.connect("escola.db")
+cur = con.cursor()
+
+alunos = [
+    ("Ana", "5A", 10),
+    ("Bruno", "5B", 11),
+    ("Clara", "5A", 10)
+]
+
+for nome, turma, idade in alunos:
+    cur.execute("SELECT * FROM alunos WHERE nome = ?", (nome,))
+    if cur.fetchone() is None:
+        cur.execute("INSERT INTO alunos (nome, turma, idade) VALUES (?, ?, ?)", (nome, turma, idade))
+    else:
+        print(f"Aluno '{nome}' já está cadastrado.")
+
+con.commit()
+con.close()
+
+```
+
+Desafio:
+
+```python
+import sqlite3
+
+con = sqlite3.connect("cadastro.db")
+cur = con.cursor()
+
+cur.execute("""
+CREATE TABLE IF NOT EXISTS contatos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT,
+    email TEXT,
+    telefone TEXT
+)
+""")
+
+cur.execute("INSERT INTO contatos (nome, email, telefone) VALUES (?, ?, ?)",
+            ("João", "joao@email.com", "12345-6789"))
+
+con.commit()
+con.close()
+```
