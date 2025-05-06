@@ -1,4 +1,4 @@
-# Aula 1 (30/04): Introdução a banco de dados com SQLAlchemy
+# Aula 1 : Introdução a banco de dados com SQLAlchemy
 
 ## Objetivos da aula
 - Compreender o que é um banco de dados e uma ORM
