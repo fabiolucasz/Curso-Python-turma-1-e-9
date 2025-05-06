@@ -1,4 +1,4 @@
-# Aula 2 (05/05) – Operações básicas com SQLAlchemy (Create e Read)
+# Aula 2 – Operações básicas com SQLAlchemy (Create e Read)
 
 Nesta aula, vamos aprender como inserir e consultar dados no banco de dados utilizando SQLAlchemy, uma poderosa ORM do Python. Utilizaremos o modelo `Aluno` criado na aula anterior.
 
