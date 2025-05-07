@@ -1,4 +1,4 @@
-# Aula 1 : Introdução a banco de dados com SQLAlchemy
+# Aula 1: Introdução a Banco de Dados com SQLAlchemy
 
 ## Objetivos da aula
 - Compreender o que é um banco de dados e uma ORM
@@ -6,6 +6,8 @@
 - Criar um banco de dados SQLite usando Python
 - Definir uma classe modelo (Aluno)
 - Gerar tabelas automaticamente no banco
+- Entender o que é e como criar um ambiente virtual
+- Compreender a utilidade do arquivo requirements.txt
 - Criar um pequeno exercício prático
 
 ---
@@ -18,7 +20,7 @@ Um **banco de dados** é um local onde armazenamos informações de forma organi
 
 ## 🧠 O que é uma ORM?
 
-ORM significa **Object-Relational Mapping**. Em vez de escrever comandos SQL direto no seu código, usamos **objetos Python** para representar as tabelas e os dados.
+ORM significa **Object-Relational Mapping**. Em vez de escrever comandos SQL diretamente no código, usamos **objetos Python** para representar as tabelas e os dados.
 
 ### Por que usar ORM?
 
@@ -28,6 +30,46 @@ ORM significa **Object-Relational Mapping**. Em vez de escrever comandos SQL dir
 - Ajuda a organizar melhor os dados e suas relações
 
 ---
+
+## 🧪 Ambiente Virtual em Python
+
+Um **ambiente virtual** permite que você isole as bibliotecas e dependências de um projeto Python, evitando conflitos com outros projetos.
+
+### 🔨 Como criar um ambiente virtual no Windows:
+
+1. No terminal (CMD ou PowerShell), crie a pasta do seu projeto:
+```shell
+mkdir crud_sqlalchemy
+cd crud_sqlalchemy
+```
+
+2. Crie o ambiente `virtual`:
+```python
+python -m venv venv
+```
+3. Ative o ambiente `virtual`:
+```python
+venv\Scripts\activate
+```
+Você verá algo como `(venv)` aparecendo no início da linha do terminal — isso indica que o ambiente virtual está ativo.
+
+## 📦 requirements.txt
+
+O arquivo `requirements.txt` armazena todas as bibliotecas instaladas em seu ambiente virtual. Isso facilita compartilhar o projeto com outras pessoas ou instalar as dependências rapidamente em outro computador.
+
+### Como gerar o requirements.txt:
+
+Com o ambiente virtual ativado, use:
+```python
+pip freeze > requirements.txt
+```
+
+### Como instalar as dependências a partir do arquivo:
+```python
+pip install -r requirements.txt
+```
+
+
 
 ## 🔧 Instalando o SQLAlchemy
 
