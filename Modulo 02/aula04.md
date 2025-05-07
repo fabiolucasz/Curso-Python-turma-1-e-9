@@ -1,4 +1,4 @@
-# Aula 4 (12/05) — Conectando CRUD com Tkinter – Parte 1
+# Aula 4 — Conectando CRUD com Tkinter – Parte 1
 
 Nesta aula, vamos começar a criar a interface gráfica do nosso CRUD usando a biblioteca Tkinter e integrá-la com o SQLAlchemy para cadastrar e listar registros do banco de dados.
 
