@@ -45,7 +45,7 @@ cd crud_sqlalchemy
 
 2. Crie o ambiente `virtual`:
 ```python
-python -m venv venv
+python -m venv .venv
 ```
 Obs: O windows restringe a execução de scripts. Abra o powershell como administrador e digite o seguinte comando:
 ```shell
@@ -53,7 +53,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 3. Ative o ambiente `virtual`:
 ```python
-venv\Scripts\activate
+.venv\Scripts\activate
 ```
 Você verá algo como `(venv)` aparecendo no início da linha do terminal — isso indica que o ambiente virtual está ativo.
 
